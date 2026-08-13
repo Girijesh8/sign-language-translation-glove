@@ -63,16 +63,15 @@ Working prototype — further improvements are in progress.
 
 
 
-
 ## Project Images
 
 ### Final Glove
 
-
+![Sign Language Translation Glove](./glove.jpeg)
 
 ### Circuit Connection
 
-circuit connection.png
+![Circuit Connection](./circuit%20connection.png)
 
 
 
