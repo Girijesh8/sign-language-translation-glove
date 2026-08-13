@@ -57,3 +57,27 @@ The goal is to explore a simple and practical approach to recognizing hand gestu
 ## Project Status
 
 Working prototype — further improvements are in progress.
+
+
+
+
+
+
+
+## Project Images
+
+### Final Glove
+
+![Sign Language Translation Glove](glove.jpeg)
+
+### Circuit Connection
+
+![Circuit Connection](circuit%20connection.png)
+
+
+
+
+
+
+
+
