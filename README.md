@@ -33,6 +33,8 @@ The recognized gesture data is then transmitted wirelessly using an HC-05 Blueto
 3. Different combinations of sensor values represent different hand gestures.
 4. The ESP32 identifies the predefined gesture.
 5. The gesture data is transmitted through the HC-05 Bluetooth module.
+6. Transmitted message is displayed on mobile screen in serial bluetooth terminal.
+7. By using text-to-speech converter it converts the message into kannada speech ouput.
 
 ## Key Features
 
@@ -41,6 +43,7 @@ The recognized gesture data is then transmitted wirelessly using an HC-05 Blueto
 - ESP32-based processing
 - Wireless Bluetooth communication
 - Wearable glove-based design
+- Real time communication
 
 ## Project Goal
 
@@ -56,7 +59,7 @@ The goal is to explore a simple and practical approach to recognizing hand gestu
 
 ## Project Status
 
-Working prototype — further improvements are in progress.
+Working prototype 
 
 
 
