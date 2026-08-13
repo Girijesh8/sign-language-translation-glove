@@ -67,11 +67,11 @@ Working prototype — further improvements are in progress.
 
 ### Final Glove
 
-![Sign Language Translation Glove](./glove.jpeg)
+![Sign Language Translation Glove](./Sign%20Language%20Translation%20Gloves/glove.jpeg)
 
 ### Circuit Connection
 
-![Circuit Connection](./circuit%20connection.png)
+![Circuit Connection](./Sign%20Language%20Translation%20Gloves/circuit%20connection.png)
 
 
 
