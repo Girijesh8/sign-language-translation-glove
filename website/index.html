@@ -1,774 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>ISL Bridge | Sign Language Translation Glove</title>
-
-    <link rel="stylesheet" href="style.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ISL Bridge — a working sign-language translation glove prototype using five flex sensors, ESP32, HC-05 Bluetooth and Kannada voice output.">
+  <title>ISL Bridge | Sign Language Translation Glove</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
-
 <body>
-
-
-<!-- ================= NAVBAR ================= -->
-
-<nav class="navbar">
-
-    <div class="logo">
-        ISL <span>Bridge</span>
-    </div>
-
+  <nav class="navbar">
+    <a class="logo" href="#home">ISL <span>Bridge</span></a>
     <div class="nav-links">
-
-        <a href="#home">Home</a>
-
-        <a href="#about">About</a>
-
-        <a href="#technology">Technology</a>
-
-        <a href="#translator">Translator</a>
-
-        <a href="#gestures">Gestures</a>
-
+      <a href="#about">About</a>
+      <a href="#system">System</a>
+      <a href="#translator">Translator</a>
+      <a href="#gestures">15 Gestures</a>
+      <a href="#hardware">Hardware</a>
     </div>
+  </nav>
 
-</nav>
-
-
-
-<!-- ================= HERO ================= -->
-
-<section id="home" class="hero">
-
-    <div class="hero-content">
-
-        <div class="tag">
-            INDIAN SIGN LANGUAGE • ASSISTIVE TECHNOLOGY
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="live-dot"></span> WORKING PROTOTYPE • WEARABLE ASSISTIVE TECHNOLOGY</div>
+        <h1>From finger movement to <span>spoken communication.</span></h1>
+        <p class="hero-lead">A sensor-equipped glove that reads predefined finger-bending patterns, processes them on an ESP32, sends the recognized message over HC-05 Bluetooth, and enables Kannada voice output through an Android smartphone.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#translator">Explore the 15 gestures</a>
+          <a class="btn secondary" href="#system">See how it works</a>
         </div>
+        <div class="hero-note">Prototype cost documented at approximately <strong>₹4,000</strong>.</div>
+      </div>
+      <div class="hero-visual">
+        <img src="images/prototype.png" alt="Final prototype of the sign language translation glove">
+        <div class="image-badge"><span>●</span> Final prototype</div>
+      </div>
+    </section>
 
-        <h1>
-            Turning Hand
-            <span>Movements</span>
-            Into Communication.
-        </h1>
+    <section class="stats" aria-label="Project facts">
+      <div><strong>5</strong><span>Flex sensors</span></div>
+      <div><strong>15</strong><span>Predefined gestures</span></div>
+      <div><strong>ESP32</strong><span>Processing unit</span></div>
+      <div><strong>HC-05</strong><span>Bluetooth link</span></div>
+      <div><strong>₹4K</strong><span>Approx. prototype cost</span></div>
+    </section>
 
-        <p>
+    <section id="about" class="section">
+      <div class="section-head">
+        <span class="kicker">THE PROJECT</span>
+        <h2>A practical communication bridge</h2>
+        <p>The project is designed around a simple chain: sense the hand, classify a predefined gesture, transmit the message, and make it audible.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card"><div class="icon">✋</div><h3>Gesture sensing</h3><p>Five flex sensors mounted on the fingers change resistance as the fingers bend. The ESP32 reads these analog signals.</p></article>
+        <article class="feature-card"><div class="icon">⚙️</div><h3>Embedded processing</h3><p>The ESP32 compares sensor combinations against predefined conditions to identify the implemented gesture.</p></article>
+        <article class="feature-card"><div class="icon">🔊</div><h3>Kannada voice output</h3><p>The recognized message is sent to an Android smartphone through HC-05 Bluetooth and converted to Kannada speech using Text-to-Speech.</p></article>
+      </div>
+    </section>
 
-            ISL Bridge is a smart-glove prototype designed
-            to capture hand movements and convert predefined
-            sign-language gestures into understandable output.
+    <section id="system" class="section system-section">
+      <div class="section-head">
+        <span class="kicker">SYSTEM ARCHITECTURE</span>
+        <h2>How the completed prototype works</h2>
+        <p>The documented working flow is <strong>Flex Sensors → ESP32 → HC-05 → Smartphone → Kannada Voice Output</strong>.</p>
+      </div>
+      <div class="diagram-card">
+        <img src="images/block-diagram.png" alt="Block diagram showing flex sensors, ESP32, HC-05, Android smartphone and Kannada voice output">
+      </div>
+      <div class="pipeline">
+        <div class="pipe"><span>01</span><h3>Sense</h3><p>Five flex sensors detect finger bending.</p></div>
+        <div class="pipe-arrow">→</div>
+        <div class="pipe"><span>02</span><h3>Process</h3><p>ESP32 reads values and matches a predefined pattern.</p></div>
+        <div class="pipe-arrow">→</div>
+        <div class="pipe"><span>03</span><h3>Transmit</h3><p>HC-05 sends the recognized message wirelessly.</p></div>
+        <div class="pipe-arrow">→</div>
+        <div class="pipe"><span>04</span><h3>Speak</h3><p>Android receives the message and produces Kannada voice output.</p></div>
+      </div>
+    </section>
 
-        </p>
-
-        <div class="hero-buttons">
-
-            <a href="#translator" class="button primary">
-                Try Translation Demo
-            </a>
-
-            <a href="#technology" class="button secondary">
-                Explore Technology
-            </a>
-
+    <section id="translator" class="section">
+      <div class="section-head">
+        <span class="kicker">INTERACTIVE DEMONSTRATION</span>
+        <h2>Project gesture translator</h2>
+        <p>Select one of the 15 implemented gesture combinations. The interface shows the project-defined message and can speak the displayed text using your browser.</p>
+      </div>
+      <div class="translator-shell">
+        <div class="translator-status"><span class="status-pill"><i></i> Website demo mode</span><span>Hardware path: ESP32 → HC-05 → Android</span></div>
+        <div class="translator-grid">
+          <div class="gesture-preview">
+            <div id="previewIcon" class="big-hand">✋</div>
+            <div class="mini-label">SELECTED GESTURE</div>
+            <h3 id="previewGesture">Finger 1</h3>
+            <div class="finger-chip" id="previewCombo">1</div>
+          </div>
+          <div class="translator-controls">
+            <label for="gestureSelect">Implemented gesture</label>
+            <select id="gestureSelect"></select>
+            <div class="message-box"><span>MESSAGE GENERATED</span><strong id="previewMessage">Nanaage Sahaayaa Beeku</strong></div>
+            <button id="speakButton" class="btn primary">🔊 Speak displayed message</button>
+            <p id="speechStatus" class="speech-status"></p>
+            <p class="demo-disclaimer">This web control is a presentation/demo interface. It does not claim to receive live Bluetooth data from the glove.</p>
+          </div>
         </div>
+      </div>
+    </section>
 
+    <section id="gestures" class="section gestures-section">
+      <div class="section-head">
+        <span class="kicker">GESTURE DATABASE</span>
+        <h2>15 implemented gesture combinations</h2>
+        <p>These are the gesture combinations and message strings documented for the completed prototype.</p>
+      </div>
+      <div id="gestureGrid" class="gesture-grid"></div>
+      <div class="note-card"><strong>Important:</strong> These are project-defined predefined combinations, not a claim to cover the complete Indian Sign Language vocabulary.</div>
+    </section>
+
+    <section id="hardware" class="section hardware-section">
+      <div class="section-head">
+        <span class="kicker">HARDWARE & COST</span>
+        <h2>What is inside the prototype?</h2>
+        <p>The following components and costs come from the project's documented component table.</p>
+      </div>
+      <div class="hardware-layout">
+        <div class="hardware-table-wrap">
+          <table>
+            <thead><tr><th>Component</th><th>Qty.</th><th>Cost</th></tr></thead>
+            <tbody id="costTable"></tbody>
+            <tfoot><tr><td colspan="2">Total documented cost</td><td>₹4,000</td></tr></tfoot>
+          </table>
+        </div>
+        <div class="hardware-side">
+          <div class="side-card"><span>CORE CONTROLLER</span><h3>ESP32</h3><p>Dual-core 240 MHz microcontroller with Wi-Fi and Bluetooth support, used to read and process the sensor inputs.</p></div>
+          <div class="side-card"><span>SENSING</span><h3>5 × Flex sensors</h3><p>2.2-inch bend sensors mounted on the fingers to capture finger movement.</p></div>
+          <div class="side-card"><span>WIRELESS</span><h3>HC-05</h3><p>Bluetooth V2.0+EDR module documented at 9600 bps for the glove-to-phone communication link.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section prototype-section">
+      <div class="section-head left"><span class="kicker">FINAL PROTOTYPE</span><h2>The hardware is real. The website documents it.</h2><p>The final prototype photograph below is taken from the project's report and shows the glove, five sensors, ESP32, HC-05, breadboard, wiring and power setup.</p></div>
+      <div class="prototype-gallery"><img src="images/prototype.png" alt="Final sign language translation glove prototype"></div>
+    </section>
+
+    <section class="section future-section">
+      <div class="section-head"><span class="kicker">NEXT DEVELOPMENT</span><h2>Where the project can go next</h2><p>These are future improvements documented in the project report.</p></div>
+      <div class="future-grid">
+        <div><span>01</span><h3>More gestures</h3><p>Increase the number of supported gestures for richer communication.</p></div>
+        <div><span>02</span><h3>Machine learning</h3><p>Explore AI/ML-based gesture classification using collected sensor data.</p></div>
+        <div><span>03</span><h3>More languages</h3><p>Add additional regional and international spoken-language outputs.</p></div>
+        <div><span>04</span><h3>Dedicated mobile app</h3><p>Replace the terminal-style phone workflow with a dedicated user interface.</p></div>
+        <div><span>05</span><h3>On-glove speaker</h3><p>Explore direct voice output without requiring a smartphone.</p></div>
+        <div><span>06</span><h3>Emergency features</h3><p>Add emergency alerts and location sharing for safety-focused use cases.</p></div>
+        <div><span>07</span><h3>Smaller electronics</h3><p>Reduce component size to improve comfort and portability.</p></div>
+        <div><span>08</span><h3>Fully wireless design</h3><p>Move toward a compact design for longer-term practical use.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div><a class="logo" href="#home">ISL <span>Bridge</span></a><p>Sign Language Translation Gloves with Kannada Voice Output</p></div>
+      <a class="github-link" href="https://github.com/Girijesh8/sign-language-translation-glove" target="_blank" rel="noopener">View project on GitHub ↗</a>
     </div>
+    <div class="footer-bottom">© 2026 ISL Bridge • Working prototype</div>
+  </footer>
 
-
-    <div class="glove-box">
-
-        <div class="glove-icon">
-            🧤
-        </div>
-
-        <div class="status">
-
-            <span class="status-dot"></span>
-
-            Prototype Concept
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ================= PROJECT OVERVIEW ================= -->
-
-<section class="overview">
-
-    <div class="overview-card">
-
-        <h3>5</h3>
-
-        <p>Flex Sensors</p>
-
-    </div>
-
-
-    <div class="overview-card">
-
-        <h3>ESP32</h3>
-
-        <p>Processing Unit</p>
-
-    </div>
-
-
-    <div class="overview-card">
-
-        <h3>HC-05</h3>
-
-        <p>Wireless Communication</p>
-
-    </div>
-
-
-    <div class="overview-card">
-
-        <h3>Kannada</h3>
-
-        <p>Speech Output</p>
-
-    </div>
-
-</section>
-
-
-
-<!-- ================= ABOUT ================= -->
-
-<section id="about" class="section">
-
-    <div class="section-heading">
-
-        <div class="small-title">
-            ABOUT THE PROJECT
-        </div>
-
-        <h2>
-            Why ISL Bridge?
-        </h2>
-
-        <p>
-            Understanding the problem behind the technology.
-        </p>
-
-    </div>
-
-
-    <div class="about-grid">
-
-        <div class="about-card">
-
-            <div class="card-icon">
-                🤝
-            </div>
-
-            <h3>
-                The Communication Gap
-            </h3>
-
-            <p>
-
-                Communication can become difficult when people
-                who do not know Indian Sign Language interact
-                with Deaf or hard-of-hearing individuals.
-
-            </p>
-
-        </div>
-
-
-        <div class="about-card">
-
-            <div class="card-icon">
-                🧤
-            </div>
-
-            <h3>
-                Our Approach
-            </h3>
-
-            <p>
-
-                Our prototype uses a sensor-equipped glove
-                to capture predefined finger-bending patterns
-                and translate them into digital information.
-
-            </p>
-
-        </div>
-
-
-        <div class="about-card">
-
-            <div class="card-icon">
-                🔊
-            </div>
-
-            <h3>
-                Accessible Output
-            </h3>
-
-            <p>
-
-                Recognized output can be transmitted wirelessly
-                and presented as text or converted into speech.
-
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ================= TECHNOLOGY ================= -->
-
-<section id="technology" class="technology-section">
-
-    <div class="section-heading">
-
-        <div class="small-title">
-            SYSTEM ARCHITECTURE
-        </div>
-
-        <h2>
-            How The Glove Works
-        </h2>
-
-        <p>
-            From physical movement to digital communication.
-        </p>
-
-    </div>
-
-
-    <div class="architecture">
-
-        <div class="architecture-step">
-
-            <div class="architecture-number">
-                01
-            </div>
-
-            <h3>
-                Flex Sensors
-            </h3>
-
-            <p>
-                Detect changes associated with finger bending.
-            </p>
-
-        </div>
-
-
-        <div class="arrow">
-            →
-        </div>
-
-
-        <div class="architecture-step">
-
-            <div class="architecture-number">
-                02
-            </div>
-
-            <h3>
-                ESP32
-            </h3>
-
-            <p>
-                Reads sensor values and processes the input.
-            </p>
-
-        </div>
-
-
-        <div class="arrow">
-            →
-        </div>
-
-
-        <div class="architecture-step">
-
-            <div class="architecture-number">
-                03
-            </div>
-
-            <h3>
-                Gesture Recognition
-            </h3>
-
-            <p>
-                Matches sensor patterns with predefined gestures.
-            </p>
-
-        </div>
-
-
-        <div class="arrow">
-            →
-        </div>
-
-
-        <div class="architecture-step">
-
-            <div class="architecture-number">
-                04
-            </div>
-
-            <h3>
-                HC-05
-            </h3>
-
-            <p>
-                Sends recognized information wirelessly.
-            </p>
-
-        </div>
-
-    </div>
-
-
-    <div class="final-output">
-
-        <span>FINAL OUTPUT</span>
-
-        <strong>
-            TEXT → KANNADA SPEECH
-        </strong>
-
-    </div>
-
-</section>
-
-
-
-<!-- ================= TRANSLATOR ================= -->
-
-<section id="translator" class="section">
-
-    <div class="section-heading">
-
-        <div class="small-title">
-            INTERACTIVE DEMONSTRATION
-        </div>
-
-        <h2>
-            Gesture Translator
-        </h2>
-
-        <p>
-            This interface demonstrates how recognized
-            gestures can be presented to a user.
-        </p>
-
-    </div>
-
-
-    <div class="translator">
-
-        <div class="translator-top">
-
-            <div>
-
-                <span class="label">
-                    CONNECTION STATUS
-                </span>
-
-                <div class="connected">
-
-                    <span></span>
-
-                    Prototype Demo Mode
-
-                </div>
-
-            </div>
-
-
-            <div>
-
-                <span class="label">
-                    INPUT SOURCE
-                </span>
-
-                <strong>
-                    Smart Glove
-                </strong>
-
-            </div>
-
-        </div>
-
-
-        <div class="translator-main">
-
-            <div class="gesture-display">
-
-                <div id="gestureIcon">
-                    👋
-                </div>
-
-                <span>
-                    DETECTED GESTURE
-                </span>
-
-                <h3 id="gestureText">
-                    HELLO
-                </h3>
-
-            </div>
-
-
-            <div class="translator-controls">
-
-                <label for="gestureSelect">
-                    Select a sample gesture
-                </label>
-
-                <select id="gestureSelect">
-
-                    <option value="hello">
-                        Hello
-                    </option>
-
-                    <option value="thankyou">
-                        Thank You
-                    </option>
-
-                    <option value="yes">
-                        Yes
-                    </option>
-
-                    <option value="no">
-                        No
-                    </option>
-
-                </select>
-
-
-                <button id="speakButton">
-
-                    🔊 Speak Translation
-
-                </button>
-
-                <p id="speechStatus"></p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ================= GESTURES ================= -->
-
-<section id="gestures" class="section gesture-section">
-
-    <div class="section-heading">
-
-        <div class="small-title">
-            GESTURE DATABASE
-        </div>
-
-        <h2>
-            Gesture Explorer
-        </h2>
-
-        <p>
-            Sample entries used to demonstrate the interface.
-        </p>
-
-    </div>
-
-
-    <div class="gesture-grid">
-
-
-        <div class="gesture-card">
-
-            <div>
-                👋
-            </div>
-
-            <h3>
-                Hello
-            </h3>
-
-            <p>
-                Sample gesture entry
-            </p>
-
-        </div>
-
-
-        <div class="gesture-card">
-
-            <div>
-                🙏
-            </div>
-
-            <h3>
-                Thank You
-            </h3>
-
-            <p>
-                Sample gesture entry
-            </p>
-
-        </div>
-
-
-        <div class="gesture-card">
-
-            <div>
-                👍
-            </div>
-
-            <h3>
-                Yes
-            </h3>
-
-            <p>
-                Sample gesture entry
-            </p>
-
-        </div>
-
-
-        <div class="gesture-card">
-
-            <div>
-                👎
-            </div>
-
-            <h3>
-                No
-            </h3>
-
-            <p>
-                Sample gesture entry
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ================= HARDWARE ================= -->
-
-<section class="hardware-section">
-
-    <div class="section-heading">
-
-        <div class="small-title">
-            HARDWARE
-        </div>
-
-        <h2>
-            Prototype Components
-        </h2>
-
-    </div>
-
-
-    <div class="hardware-grid">
-
-
-        <div class="hardware-card">
-
-            <span>01</span>
-
-            <h3>
-                ESP32
-            </h3>
-
-            <p>
-                Main microcontroller used to read and
-                process sensor input.
-            </p>
-
-        </div>
-
-
-        <div class="hardware-card">
-
-            <span>02</span>
-
-            <h3>
-                Flex Sensors
-            </h3>
-
-            <p>
-                Five sensors are used to capture
-                finger-bending information.
-            </p>
-
-        </div>
-
-
-        <div class="hardware-card">
-
-            <span>03</span>
-
-            <h3>
-                HC-05
-            </h3>
-
-            <p>
-                Bluetooth module used for wireless
-                communication.
-            </p>
-
-        </div>
-
-
-        <div class="hardware-card">
-
-            <span>04</span>
-
-            <h3>
-                Glove
-            </h3>
-
-            <p>
-                Wearable platform on which the sensing
-                components are mounted.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ================= FUTURE ================= -->
-
-<section class="future-section">
-
-    <div class="section-heading">
-
-        <div class="small-title">
-            FUTURE DEVELOPMENT
-        </div>
-
-        <h2>
-            Where We Can Go Next
-        </h2>
-
-    </div>
-
-
-    <div class="future-grid">
-
-
-        <div>
-
-            <h3>
-                More Gestures
-            </h3>
-
-            <p>
-                Expand the vocabulary beyond predefined
-                prototype gestures.
-            </p>
-
-        </div>
-
-
-        <div>
-
-            <h3>
-                Machine Learning
-            </h3>
-
-            <p>
-                Explore trained classification models
-                using collected sensor data.
-            </p>
-
-        </div>
-
-
-        <div>
-
-            <h3>
-                Multiple Languages
-            </h3>
-
-            <p>
-                Support additional spoken-language
-                outputs where appropriate.
-            </p>
-
-        </div>
-
-
-        <div>
-
-            <h3>
-                Mobile Application
-            </h3>
-
-            <p>
-                Create a dedicated mobile interface
-                for the wearable system.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-    <div class="footer-logo">
-        ISL <span>Bridge</span>
-    </div>
-
-    <p>
-        Smart glove prototype for accessible communication.
-    </p>
-
-    <p class="copyright">
-        © 2026 ISL Bridge
-    </p>
-
-</footer>
-
-
-
-<script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
-
 </html>
